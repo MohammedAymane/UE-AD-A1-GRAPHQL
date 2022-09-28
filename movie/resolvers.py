@@ -38,24 +38,6 @@ def resolve_actors_in_movie(movie, info):
         actors = [actor for actor in data['actors'] if movie['id'] in actor['films']]
         return actors
 
-# # define function to resolve adding a new movie
-# def add_movie(_, info, title, year, rating, actors):
-#     newmovies = {}
-#     newmovie = {}
-#     with open('{}/data/movies.json'.format("."), "r") as rfile:
-#         movies = json.load(rfile)
-#         newmovie = {
-#             "id": len(movies['movies']) + 1,
-#             "title": title,
-#             "year": year,
-#             "rating": rating,
-#             "actors": actors
-#         }
-#         movies['movies'].append(newmovie)
-#         newmovies = movies
-#     with open('{}/data/movies.json'.format("."), "w") as wfile:
-#         json.dump(newmovies, wfile)
-#     return newmovie
 
 # define function to resolve deleting a movie
 def delete_movie(_, info, _id):
